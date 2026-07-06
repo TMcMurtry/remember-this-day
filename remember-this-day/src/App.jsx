@@ -1,11 +1,17 @@
 import './App.css'
-import Login from '/components/Login.jsx'
-import EntrySubmission from '/components/EntrySubmission.jsx'
-import AboutPage from '/components/AboutPage.jsx'
+import Login from './components/Login'
+import EntrySubmission from './components/EntrySubmission'
+import AboutPage from './components/AboutPage'
 
 function App() {
 
-  return ()
+  return (
+    <div>
+      <Login/>
+      <AboutPage/>
+      <EntrySubmission/>
+    </div>
+  )
 }
 
 export default App
