@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import UserData from '../UserData.json'
 export default function Login({isLoggedIn, setIsLoggedIn}){
     //user inputs data
@@ -7,23 +8,26 @@ export default function Login({isLoggedIn, setIsLoggedIn}){
  //if both match, it automatically navigates to the entries page, 
  //navigating away from page logs out
  //pressing the log out page logs out
-  const usernameVerify = UserData.userProfiles.filter(() => )
-  const passwordVerify = 
-  const loginVerify = 
-
-   throw new Error(Username and/or Password invalid, please try again);
-    
-
+    const [usernameInput, setUsernameInput] = useState("");
+    const [passwordInput, setPasswordInput] = useState("");
+    const handleUsernameChange = (ev) => setUsernameInput(ev.target.value)
+    const handlePasswordChange = (ev) => setPasswordInput(ev.target.value)
 
     return(
+        <div>
         <form>
             <label htmlFor="username">
-                <input id="username" type="text" name="username" placeholder="Username" required/>
+                <input id="username" type="text" name="username" 
+                value={usernameInput} onChange={handleUsernameChange} placeholder="Username" required/>
             </label>
             <label htmlFor="password">
-                <input id="password" name="password" type="password" placeholder="Password" required/>
+                <input id="password" name="password" type="password" 
+                value={passwordInput} onChange={handlePasswordChange} placeholder="Password" required/>
             </label>
-            <button name="login" id="login" type="submit" onClick={loginVerify()}>Log In</button>
+            <button name="login" id="login" type="submit" >Log In</button>
         </form>
+        <p>{usernameInput}</p>
+        <p>{passwordInput}</p>
+        </div>
     )
 }
