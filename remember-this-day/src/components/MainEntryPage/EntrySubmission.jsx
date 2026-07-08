@@ -1,10 +1,13 @@
 import EntrySubmissionForm from './EntrySubmissionForm'
+import ViewPastEntries from './ViewPastEntries'
+import ViewPrompts from './Prompts/ViewPrompts'
 
 export default function EntrySubmission(){
 
     return(
         <div>
-            <h1>Hi</h1>
+            <ViewPastEntries/>
+            <ViewPrompts/>
             <EntrySubmissionForm/>
         </div>
     )

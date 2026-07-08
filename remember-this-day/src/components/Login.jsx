@@ -1,12 +1,7 @@
 import { useState } from 'react'
 import UserData from '../UserData.json'
 export default function Login({isLoggedIn, setIsLoggedIn}){
- //on click, username input is checked against current profiles
- //if username is matched, checks password of that user profile
- //if either don't match it throws error 
- //if both match, it automatically navigates to the entries page, 
- //navigating away from page logs out
- //pressing the log out page logs out
+ 
     const [usernameInput, setUsernameInput] = useState("");
     const [passwordInput, setPasswordInput] = useState("");
     const handleUsernameChange = (ev) => setUsernameInput(ev.target.value);
@@ -15,6 +10,9 @@ export default function Login({isLoggedIn, setIsLoggedIn}){
     const trimmedPasswordInput = passwordInput.trim();
     let failedLoginMessage = null;
     
+    function handleLoginSuccess(){
+        setIsLoggedIn(true);
+    }
     
     function passwordVerify(){
         let passwordToMatch = null;
@@ -25,7 +23,9 @@ export default function Login({isLoggedIn, setIsLoggedIn}){
        } else {
          passwordToMatch = findUsername[0].password;
        }
-       passwordToMatch === trimmedPasswordInput ? setIsLoggedIn = true : failedLoginMessage = "Incorrect username or password";
+       passwordToMatch === trimmedPasswordInput ? handleLoginSuccess() : failedLoginMessage = "Incorrect username or password";
+       setUsernameInput("");
+       setPasswordInput("");
     }
 
     return(
@@ -39,10 +39,11 @@ export default function Login({isLoggedIn, setIsLoggedIn}){
                 <input id="password" name="password" type="password" 
                 value={passwordInput} onChange={handlePasswordChange} placeholder="Password" required/>
             </label>
-            <button name="login" id="login" type="submit" onClick={passwordVerify}>Log In</button>
+            <p>{failedLoginMessage}</p>
+            <button name="login" id="login" type="button" onClick={passwordVerify}>Log In</button>
         </form>
         <p>{trimmedUsernameInput}</p>
-        <p>{passwordInput}</p>
+        <p>{trimmedPasswordInput}</p>
         </div>
     )
 }
