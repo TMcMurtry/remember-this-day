@@ -13,7 +13,7 @@ export default function Login({isLoggedIn, setIsLoggedIn, currentUser, setCurren
         (user.username === trimmedUsernameInput ))
     
     function handleLoginSuccess(){
-        setCurrentUser(findUser)
+        setCurrentUser(findUser[0])
         setIsLoggedIn(true);
     }
     

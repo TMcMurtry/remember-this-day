@@ -3,10 +3,10 @@ import { useState } from "react"
 export default function ViewPastEntries({currentUser}){
     const [entryDisplay, setEntryDisplay] = useState(false);
     const [entryButtonText, setEntryButtonText] = useState("View Past Entry!")
-
+    
     function handleEntryDisplay (){
-        const randomNumberGenerate = Math.floor(Math.random() * (currentUser[0].entries.length))
-        const randomEntry = currentUser[0].entries[randomNumberGenerate]
+        const randomNumberGenerate = Math.floor(Math.random() * (currentUser.entries.length))
+        const randomEntry = currentUser.entries[randomNumberGenerate]
         setEntryDisplay(randomEntry)
         setEntryButtonText("View Another Entry!")
     }
