@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import UserData from '../UserData.json'
-export default function Login({isLoggedIn, setIsLoggedIn}){
+export default function Login({isLoggedIn, setIsLoggedIn, currentUser, setCurrentUser}){
  
     const [usernameInput, setUsernameInput] = useState("");
     const [passwordInput, setPasswordInput] = useState("");
@@ -9,16 +9,17 @@ export default function Login({isLoggedIn, setIsLoggedIn}){
     const trimmedUsernameInput = usernameInput.trim();
     const trimmedPasswordInput = passwordInput.trim();
     let failedLoginMessage = null;
+     const findUser = UserData.userProfiles.filter((user) => 
+        (user.username === trimmedUsernameInput ))
     
     function handleLoginSuccess(){
+        setCurrentUser(findUser)
         setIsLoggedIn(true);
     }
     
     function passwordVerify(){
         let passwordToMatch = null;
-        const findUsername = UserData.userProfiles.filter((user) => 
-        (user.username === trimmedUsernameInput ))
-       if (findUsername.length === 0){
+       if (findUser.length != 1){
         return("Incorrect username or password")
        } else {
          passwordToMatch = findUsername[0].password;

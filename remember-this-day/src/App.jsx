@@ -8,7 +8,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
  
   return (
     <div>
@@ -18,11 +19,12 @@ function App() {
       </nav>
       { !isLoggedIn ?
       <Routes>
-        <Route path="/" element={<Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>}/>
+        <Route path="/" element={<Login currentUser={currentUser} setCurrentUser={setCurrentUser}
+        isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>}/>
         <Route path="/about" element={<AboutPage/>}/>
       </Routes> :
        <Routes>
-        <Route path="/" element={<EntrySubmission/>}/>
+        <Route path="/" element={<EntrySubmission currentUser={currentUser} setCurrentUser={setCurrentUser} />}/>
         <Route path="/about" element={<AboutPage/>}/>
       </Routes>
       }

@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function EntrySubmissionForm(){
+export default function EntrySubmissionForm({currentUser, setCurrentUser}){
     const [entryTitle, setEntryTitle] = useState();
     const [entryTextBody, setEntryTextBody] = useState();
     const [entryDate, setEntryDate] = useState();
