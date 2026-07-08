@@ -3,7 +3,7 @@ import WritingPrompts from './WritingPrompts.json'
 
 //generate random number
 
-export default function ViewPrompts({currentUser}){
+export default function ViewPrompts(){
     const [promptDisplay, setPromptDisplay] = useState(false);
     const [promptButtonText, setPromptButtonText] = useState("View Writing Prompts")
 
