@@ -1,5 +1,6 @@
 [
-    {"category":"Small Moments of Joy",
+    {"id": 1,
+        "category":"Small Moments of Joy",
  "prompts":[
     "What was the first thing that made you smile today?",
 "Did you hear a sound today that brought you comfort or happiness? What was it?",
@@ -12,7 +13,9 @@
 "What's a cozy or comforting moment you experienced today?",
 "Did you find joy in a simple routine today? What was it?"
  ]},
-  {"category":"Relationships and Connections",
+  {
+    "id": 2,
+    "category":"Relationships and Connections",
  "prompts":[
     "Who made you feel appreciated or loved today? How did they do it?",
 "Did you have a meaningful conversation today? What was it about?",
@@ -25,7 +28,8 @@
 "Who's a person who has helped you recently, big or small?",
 "Did you share a laugh with someone today? What was it about?"
  ]},
-  {"category":"Personal Growth and Achievements",
+  {"id": 3,
+    "category":"Personal Growth and Achievements",
  "prompts":[
     "What's something you accomplished today, no matter how small?",
 "Did you learn something new today? What was it?",
@@ -38,7 +42,8 @@
 "What's a mistake you made today that taught you something?",
 "Did you help yourself feel better today? How?"
  ]},
-  {"category":"Surprises and Unexpected Delights",
+  {"id": 4,
+    "category":"Surprises and Unexpected Delights",
  "prompts":[
     "Did something unexpected happen today that made you happy?",
 "What's a surprise you received today, big or small?",
@@ -51,7 +56,8 @@
 "Did you try something new today that pleasantly surprised you?",
 "What's a small joy that caught you off guard today?"
  ]},
-  {"category":"Reflection and Gratitude",
+  {"id": 5,
+    "category":"Reflection and Gratitude",
  "prompts":[
     "What's one thing you're grateful for today that you often take for granted?",
 "Did you take a moment today to appreciate where you are in life?",

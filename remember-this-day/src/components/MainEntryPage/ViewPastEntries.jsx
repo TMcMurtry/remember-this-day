@@ -1,8 +1,16 @@
-export default function ViewPastEntries(){
+export default function ViewPastEntries({currentUser}){
+    function findEntry(){
+    function randomNumberPull(){
+    
+    }
+    }
 
     return(
-        <label htmlFor="viewPastEntries">
-            <button name="viewPastEntries" id="viewPastEntries" type="button">View past entry</button>
-        </label>
+        <div>
+            <p>{}</p>
+            <label htmlFor="viewPastEntries">
+                <button name="viewPastEntries" id="viewPastEntries" type="button">View past entry</button>
+            </label>
+        </div>
     )
 }

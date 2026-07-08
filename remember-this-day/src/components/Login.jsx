@@ -22,7 +22,7 @@ export default function Login({isLoggedIn, setIsLoggedIn, currentUser, setCurren
        if (findUser.length != 1){
         return("Incorrect username or password")
        } else {
-         passwordToMatch = findUsername[0].password;
+         passwordToMatch = findUser[0].password;
        }
        passwordToMatch === trimmedPasswordInput ? handleLoginSuccess() : failedLoginMessage = "Incorrect username or password";
        setUsernameInput("");
