@@ -18,8 +18,10 @@ app{
 
 .body{
     grid-area: Body;
+    grid-row-start: 2;
 }
 
 .footer{
     grid-area: Footer;
+    grid-row-start: 3;
 }
