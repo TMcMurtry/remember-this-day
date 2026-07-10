@@ -1,8 +1,26 @@
-export default function ViewPastEntries(){
+import { useState } from "react"
 
+export default function ViewPastEntries({currentUser}){
+    const [entryDisplay, setEntryDisplay] = useState(false);
+    const [entryButtonText, setEntryButtonText] = useState("View Past Entry!")
+    
+    function handleEntryDisplay (){
+        const randomNumberGenerate = Math.floor(Math.random() * (currentUser.entries.length))
+        const randomEntry = currentUser.entries[randomNumberGenerate]
+        setEntryDisplay(randomEntry)
+        setEntryButtonText("View Another Entry!")
+    }
     return(
-        <label htmlFor="viewPastEntries">
-            <button name="viewPastEntries" id="viewPastEntries" type="button">View past entry</button>
-        </label>
+        <div>
+            {entryDisplay && 
+            <div className="entryDisplay">
+                <h2>Date: {entryDisplay.date}</h2>
+                {entryDisplay.title && <h3>Title: {entryDisplay.title}</h3>}
+                <p>Entry: <br/> {entryDisplay.entry}</p>
+                </div>}
+            <label htmlFor="viewPastEntries">
+                <button name="viewPastEntries" id="viewPastEntries" type="button" onClick={handleEntryDisplay}>{entryButtonText}</button>
+            </label>
+        </div>
     )
 }
