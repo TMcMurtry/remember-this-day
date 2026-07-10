@@ -1,33 +1,18 @@
 import './App.css'
-import { Routes, Route, Link } from 'react-router';
-import { useState } from 'react';
-import Login from './components/Login'
-import EntrySubmission from './components/MainEntryPage/EntrySubmission'
-import AboutPage from './components/AboutPage'
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Body from './components/Body';
+import { useState } from 'react';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
  
   return (
-    <div>
-      <Header/>
-      <nav>
-        <Link to="/about">About this application</Link>
-      </nav>
-      { !isLoggedIn ?
-      <Routes>
-        <Route path="/" element={<Login currentUser={currentUser} setCurrentUser={setCurrentUser}
-        isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>}/>
-        <Route path="/about" element={<AboutPage/>}/>
-      </Routes> :
-       <Routes>
-        <Route path="/" element={<EntrySubmission currentUser={currentUser} setCurrentUser={setCurrentUser} />}/>
-        <Route path="/about" element={<AboutPage/>}/>
-      </Routes>
-      }
+    <div >
+      <Header isLoggedIn={isLoggedIn}/>
+      <Body isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}
+        currentUser={currentUser} setCurrentUser={setCurrentUser}/>
       <Footer/>
     </div>
   )

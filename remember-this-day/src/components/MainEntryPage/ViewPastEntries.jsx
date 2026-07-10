@@ -13,7 +13,7 @@ export default function ViewPastEntries({currentUser}){
     return(
         <div>
             {entryDisplay && 
-            <div>
+            <div className="entryDisplay">
                 <h2>Date: {entryDisplay.date}</h2>
                 {entryDisplay.title && <h3>Title: {entryDisplay.title}</h3>}
                 <p>Entry: <br/> {entryDisplay.entry}</p>

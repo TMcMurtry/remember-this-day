@@ -1,5 +1,4 @@
 import { useState } from "react"
-import UserData from '../../UserData.json'
 
 export default function EntrySubmissionForm({currentUser, setCurrentUser}){
     const [entryTitle, setEntryTitle] = useState("");
@@ -18,14 +17,9 @@ export default function EntrySubmissionForm({currentUser, setCurrentUser}){
         setEntryDate("");
     };
 
-    //Create an object using the data
-    //take id of user
-    //find matching id of userData
-    //append data to json file
-    //increment numberofEntries count
 
     return(
-        <form onSubmit={handleEntryAppend}>
+        <form className="entrySubmitForm" onSubmit={handleEntryAppend}>
             <label htmlFor="title">
                 <input name="title" id="title" type="text" value={entryTitle} onChange={handleTitleChange} placeholder="Enter Title"/>
             </label>

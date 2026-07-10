@@ -1,0 +1,25 @@
+:root{
+    background-color: #FAFBBD;
+    color: #343434;
+}
+
+app{
+    display: grid;
+    grid-template-areas: 
+        "Header"
+        "Body"
+        "Footer";
+    grid-template-rows: auto 1fr auto;
+}
+
+.header{
+    grid-area: Header;
+}
+
+.body{
+    grid-area: Body;
+}
+
+.footer{
+    grid-area: Footer;
+}
