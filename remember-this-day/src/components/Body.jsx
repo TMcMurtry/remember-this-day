@@ -2,6 +2,8 @@ import { Routes, Route } from 'react-router';
 import Login from './Login';
 import AboutPage from './AboutPage';
 import EntrySubmission from './MainEntryPage/EntrySubmission'
+import './Body.css'
+
 
 export default function Body({currentUser, setCurrentUser, isLoggedIn, setIsLoggedIn}){
 
