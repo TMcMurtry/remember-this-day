@@ -1,4 +1,4 @@
-footerDisplay {
+.footerDisplay {
     grid-area: 'Footer';
-    display: flex;
+    background-image: linear-gradient(120deg, #F1B351, #FDE050);
 }

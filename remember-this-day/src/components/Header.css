@@ -1,3 +1,9 @@
 .headerDisplay{
     grid-area: Header;
+    background-image: linear-gradient(160deg, #F1B351, #FDE050 );
+}
+
+nav{
+    display: flex;
+    justify-content: end;
 }

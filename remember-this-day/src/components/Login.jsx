@@ -32,21 +32,22 @@ export default function Login({isLoggedIn, setIsLoggedIn, currentUser, setCurren
     }
 
     return(
-        <div>
-        <form>
-            <label htmlFor="username">
-                <input id="username" type="text" name="username" 
-                value={usernameInput} onChange={handleUsernameChange} placeholder="Username" required/>
-            </label>
-            <label htmlFor="password">
-                <input id="password" name="password" type="password" 
-                value={passwordInput} onChange={handlePasswordChange} placeholder="Password" required/>
-            </label>
-            <p>{failedLoginMessage}</p>
-            <button name="login" id="login" type="button" onClick={passwordVerify}>Log In</button>
-        </form>
-        <p>{trimmedUsernameInput}</p>
-        <p>{trimmedPasswordInput}</p>
+        <div className='loginPage'>
+            <form className='loginForm'>
+                <h2>Log In</h2>
+                <label htmlFor="username"> <br/>
+                    <input id="username" type="text" name="username" 
+                    value={usernameInput} onChange={handleUsernameChange} placeholder="Username" required/>
+                </label> <br/>
+                <label htmlFor="password"> <br/>
+                    <input id="password" name="password" type="password" 
+                    value={passwordInput} onChange={handlePasswordChange} placeholder="Password" required/>
+                </label>
+                <p>{failedLoginMessage}</p>
+                <button name="login" id="login" type="button" onClick={passwordVerify}>Log In</button>
+            </form>
+            <p>{trimmedUsernameInput}</p>
+            <p>{trimmedPasswordInput}</p>
         </div>
     )
 }

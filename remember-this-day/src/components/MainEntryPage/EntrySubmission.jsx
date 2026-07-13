@@ -6,7 +6,7 @@ import './EntrySubmission.css'
 export default function EntrySubmission({currentUser, setCurrentUser}){
     //add logout link
     return(
-        <div>
+        <div className='entrySubmission'>
             <ViewPastEntries currentUser={currentUser} />
             <ViewPrompts currentUser={currentUser} />
             <EntrySubmissionForm currentUser={currentUser} setCurrentUser={setCurrentUser} />

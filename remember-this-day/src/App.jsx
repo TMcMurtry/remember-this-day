@@ -9,7 +9,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
  
   return (
-    <div >
+    <div className='app'>
       <Header isLoggedIn={isLoggedIn}/>
       <MainComponent isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}
         currentUser={currentUser} setCurrentUser={setCurrentUser}/>

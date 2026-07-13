@@ -1,19 +1,26 @@
 :root{
-    background-color: #FAFBBD;
+    background-color:var(--dark-yellow);
     color: #343434;
+    --dark-blue: #062B79;
+    --med-blue: #16498A;
+    --light-blue: #5995B7;
+    --dark-yellow: #F1B351;
+    --med-yellow: #FDE050;
+    --light-yellow: #FAFBBD;
     
 }
 
 html, body, #root{
     height: 100vh;
     width: 100vw;
+    margin: 0%;
 }
 
-App{
+.app {
     display: grid;
     grid-template-areas: 
         "Header"
-        "Main"
+        "MainComponent"
         "Footer";
     grid-template-rows: auto 1fr auto;
     height: 100vh;
