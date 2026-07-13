@@ -4,7 +4,7 @@ import './Header.css'
 export default function Header({isLoggedIn}){
 
     return(
-        <div>
+        <div className="headerDisplay">
             <h1>Remember This Day</h1>
             {isLoggedIn ? 
             <nav className="loggedOutNav">

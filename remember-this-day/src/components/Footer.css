@@ -1,0 +1,4 @@
+footerDisplay {
+    grid-area: 'Footer';
+    display: flex;
+}
