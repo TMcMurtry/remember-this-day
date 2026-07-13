@@ -2,13 +2,13 @@ import { Routes, Route } from 'react-router';
 import Login from './Login';
 import AboutPage from './AboutPage';
 import EntrySubmission from './MainEntryPage/EntrySubmission'
-import './Mai.css'
+import './MainComponent.css'
 
 
-export default function Main({currentUser, setCurrentUser, isLoggedIn, setIsLoggedIn}){
+export default function MainComponent({currentUser, setCurrentUser, isLoggedIn, setIsLoggedIn}){
 
     return(
-      <div className='mainDisplay'>
+      <div className='mainComponent'>
         { !isLoggedIn ?
         <Routes>
           <Route path="/" element={<Login currentUser={currentUser} setCurrentUser={setCurrentUser}

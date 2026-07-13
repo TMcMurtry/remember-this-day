@@ -1,7 +1,7 @@
 import './App.css'
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Main from './components/Main';
+import MainComponent from './components/MainComponent';
 import { useState } from 'react';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
   return (
     <div >
       <Header isLoggedIn={isLoggedIn}/>
-      <Main isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}
+      <MainComponent isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}
         currentUser={currentUser} setCurrentUser={setCurrentUser}/>
       <Footer/>
     </div>

@@ -4,12 +4,18 @@
     
 }
 
-app{
+html, body, #root{
+    height: 100vh;
+    width: 100vw;
+}
+
+App{
     display: grid;
     grid-template-areas: 
         "Header"
         "Main"
         "Footer";
     grid-template-rows: auto 1fr auto;
-    border: #343434;
+    height: 100vh;
+    width: 100vw;
 }
