@@ -1,6 +1,6 @@
 .loginPage{
     background-image: url('images/Sunrise.png');
-    background-size: cover;
+    background-size: auto;
     height: 100%;
     width: 100%;
     display: grid;

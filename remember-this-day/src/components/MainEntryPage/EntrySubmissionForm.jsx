@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function EntrySubmissionForm({currentUser, setCurrentUser}){
+export default function EntrySubmissionForm({currentUser, setCurrentUser, backgroundSelector, setBackgroundSelector}){
     const [entryTitle, setEntryTitle] = useState("");
     const [entryTextBody, setEntryTextBody] = useState("");
     const [entryDate, setEntryDate] = useState("");
@@ -15,16 +15,18 @@ export default function EntrySubmissionForm({currentUser, setCurrentUser}){
         setEntryTitle("");
         setEntryTextBody("");
         setEntryDate("");
+        setBackgroundSelector(backgroundSelector + 4)
     };
 
 
     return(
-        <form className="entrySubmitForm" onSubmit={handleEntryAppend}>
-            <label htmlFor="title">
+        <form className="entrySubmissionForm" onSubmit={handleEntryAppend}>
+            <h2>Submit a new journal entry!</h2>
+            <label htmlFor="title">Title:
                 <input name="title" id="title" type="text" value={entryTitle} onChange={handleTitleChange} placeholder="Enter Title"/>
             </label>
             <label htmlFor="entryText">
-                <textarea name="entryText" id="entryText" value={entryTextBody} onChange={handleEntryTextChange} placeholder="Type your entry here" cols={30} rows={20} required/>
+                <textarea name="entryText" id="entryText" value={entryTextBody} onChange={handleEntryTextChange} placeholder="Type your entry here" required/>
             </label>
             <label htmlFor="dateInput">
                 <input name="dateInput" id="dateInput" type="date" value={entryDate} onChange={handleDateChange} required/>

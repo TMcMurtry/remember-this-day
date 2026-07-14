@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function ViewPastEntries({currentUser}){
+export default function ViewPastEntries({currentUser, backgroundSelector, setBackgroundSelector}){
     const [entryDisplay, setEntryDisplay] = useState(false);
     const [entryButtonText, setEntryButtonText] = useState("View Past Entry!")
     
@@ -9,9 +9,10 @@ export default function ViewPastEntries({currentUser}){
         const randomEntry = currentUser.entries[randomNumberGenerate]
         setEntryDisplay(randomEntry)
         setEntryButtonText("View Another Entry!")
+        setBackgroundSelector(backgroundSelector + 1)
     }
     return(
-        <div>
+        <div className="pastEntryDisplay">
             {entryDisplay && 
             <div className="entryDisplay">
                 <h2>Date: {entryDisplay.date}</h2>

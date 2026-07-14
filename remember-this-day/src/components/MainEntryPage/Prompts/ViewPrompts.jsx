@@ -15,7 +15,7 @@ export default function ViewPrompts(){
     }
 
     return(
-        <div>
+        <div className='promptDisplay'>
             { promptDisplay && <div className='promptDisplay'><h2>Prompt Category: {promptDisplay.category}</h2>
             <ul>
                 {promptDisplay.prompts.map((prompt, index) => <li key={index} >{prompt}</li>)}

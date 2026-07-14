@@ -1,6 +1,6 @@
 :root{
-    background-color:var(--dark-yellow);
-    color: #343434;
+    background-color:white;
+    color: var(--dark-yellow);
     --dark-blue: #062B79;
     --med-blue: #16498A;
     --light-blue: #5995B7;
