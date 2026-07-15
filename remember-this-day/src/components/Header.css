@@ -1,8 +1,16 @@
 .headerDisplay{
     grid-area: Header;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto ;
 }
 
 nav{
+    grid-row-start: 2;
+    grid-column-start: 2;
     display: flex;
-    justify-content: end;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    white-space: pre;
 }

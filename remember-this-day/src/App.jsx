@@ -10,7 +10,7 @@ function App() {
  
   return (
     <div className='app'>
-      <Header isLoggedIn={isLoggedIn}/>
+      <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
       <MainComponent isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}
         currentUser={currentUser} setCurrentUser={setCurrentUser}/>
       <Footer/>
