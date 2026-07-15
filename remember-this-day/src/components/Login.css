@@ -17,5 +17,8 @@
     display: grid;
     justify-items: center;
     padding: 15px;
+}
 
+.loginForm button{
+    margin: 20px;
 }

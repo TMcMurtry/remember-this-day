@@ -1,6 +1,7 @@
 import { useState } from "react"
 
-export default function EntrySubmissionForm({currentUser, setCurrentUser, backgroundSelector, setBackgroundSelector}){
+export default function EntrySubmissionForm({currentUser, setCurrentUser, backgroundSelector, 
+    setBackgroundSelector, setPromptDisplay, setPromptButtonText}){
     const [entryTitle, setEntryTitle] = useState("");
     const [entryTextBody, setEntryTextBody] = useState("");
     const [entryDate, setEntryDate] = useState("");
@@ -16,6 +17,8 @@ export default function EntrySubmissionForm({currentUser, setCurrentUser, backgr
         setEntryTextBody("");
         setEntryDate("");
         setBackgroundSelector(backgroundSelector + 4)
+        setPromptDisplay(false)
+        setPromptButtonText("View Writing Prompts")
     };
 
 

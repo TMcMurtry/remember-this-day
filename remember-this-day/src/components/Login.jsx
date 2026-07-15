@@ -6,6 +6,7 @@ export default function Login({isLoggedIn, setIsLoggedIn, currentUser, setCurren
  
     const [usernameInput, setUsernameInput] = useState("");
     const [passwordInput, setPasswordInput] = useState("");
+    const [loginFail, setLoginFail] = useState(false);
     const handleUsernameChange = (ev) => setUsernameInput(ev.target.value);
     const handlePasswordChange = (ev) => setPasswordInput(ev.target.value);
     const trimmedUsernameInput = usernameInput.trim();
@@ -17,17 +18,15 @@ export default function Login({isLoggedIn, setIsLoggedIn, currentUser, setCurren
         setCurrentUser(findUser[0])
         setIsLoggedIn(true);
     }
-
-    const failedLoginMessage = "Incorrect Username or Password"
     
     function passwordVerify(){
         let passwordToMatch = null;
         if (findUser.length != 1){
-            return("Incorrect username or password")
+            return(setLoginFail(true))
         } else {
             passwordToMatch = findUser[0].password;
         }
-        passwordToMatch === trimmedPasswordInput ? handleLoginSuccess() : failedLoginMessage ;
+        passwordToMatch === trimmedPasswordInput ? handleLoginSuccess() : setLoginFail(true) ;
         setUsernameInput("");
         setPasswordInput("");
     }
@@ -44,7 +43,7 @@ export default function Login({isLoggedIn, setIsLoggedIn, currentUser, setCurren
                     <input id="password" name="password" type="password" 
                     value={passwordInput} onChange={handlePasswordChange} placeholder="Password" required/>
                 </label>
-                <p>{failedLoginMessage}</p>
+                {loginFail && <p>Incorrect Username or Password</p>}
                 <button name="login" id="login" type="button" onClick={passwordVerify}>Log In</button>
             <p>{trimmedUsernameInput}</p>
             <p>{trimmedPasswordInput}</p>

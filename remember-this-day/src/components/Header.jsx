@@ -2,7 +2,6 @@ import { Link } from "react-router"
 import './Header.css'
 
 export default function Header({isLoggedIn, setIsLoggedIn}){
-    const handleLogOut = setIsLoggedIn(false);
 
     return(
         <div className="headerDisplay">
@@ -13,7 +12,7 @@ export default function Header({isLoggedIn, setIsLoggedIn}){
             <Link to="/about">About this application    </Link>
             <Link to="/Optimizing">How to make the most of your journal </Link>
             </nav> : <div>
-            <button type="button" onClick={handleLogOut} name="logout" id="logout" >Log Out</button>
+            {/*<button type="button" onClick={setIsLoggedIn(false)} name="logout" id="logout" >Log Out</button>*/}
             <nav className="loggedInNav">
             <Link to="/">Entry Page     </Link>
             <Link to="/about">About this application    </Link>

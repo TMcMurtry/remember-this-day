@@ -3,9 +3,7 @@ import WritingPrompts from './WritingPrompts.json'
 
 //generate random number
 
-export default function ViewPrompts(){
-    const [promptDisplay, setPromptDisplay] = useState(false);
-    const [promptButtonText, setPromptButtonText] = useState("View Writing Prompts")
+export default function ViewPrompts({promptDisplay, setPromptDisplay}){
 
     function handlePromptChange(){
     const randomNumberGenerate = Math.floor(Math.random() * (WritingPrompts.length))
