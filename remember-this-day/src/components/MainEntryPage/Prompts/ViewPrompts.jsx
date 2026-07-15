@@ -15,10 +15,11 @@ export default function ViewPrompts(){
     }
 
     return(
-        <div className='promptDisplay'>
+        <div className='promptDisplayArea'>
             { promptDisplay && <div className='promptDisplay'><h2>Prompt Category: {promptDisplay.category}</h2>
             <ul>
-                {promptDisplay.prompts.map((prompt, index) => <li key={index} >{prompt}</li>)}
+                {promptDisplay.prompts.map((prompt, index) =>
+                     <li key={index} >{prompt}</li>)}
             </ul>
             </div>}
             <label htmlFor="viewPrompts">
