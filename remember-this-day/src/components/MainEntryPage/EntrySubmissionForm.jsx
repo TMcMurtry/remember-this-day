@@ -16,7 +16,7 @@ export default function EntrySubmissionForm({currentUser, setCurrentUser, backgr
         setEntryTitle("");
         setEntryTextBody("");
         setEntryDate("");
-        setBackgroundSelector(backgroundSelector + 4)
+        setBackgroundSelector(backgroundSelector + 3)
         setPromptDisplay(false)
         setPromptButtonText("View Writing Prompts")
     };

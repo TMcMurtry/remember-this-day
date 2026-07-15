@@ -64,22 +64,18 @@
 }
 
 .entrySubmission.entrySubmissionBackground1{
-    background-image: linear-gradient(135deg, var(--dark-blue), var(--med-blue));
+    background-image: linear-gradient(135deg, var(--dark-blue), var(--med-blue), var(--light-blue));
     background-size: cover;
 }
 
 .entrySubmission.entrySubmissionBackground2{
-    background-image: linear-gradient(135deg, var(--med-blue), var(--light-blue));
+    background-image: linear-gradient(135deg, var(--med-blue), var(--light-blue), var(--light-yellow));
 }
 
 .entrySubmission.entrySubmissionBackground3{
-    background-image: linear-gradient(135deg, var(--light-blue), var(--light-yellow));
+    background-image: linear-gradient(135deg, var(--light-blue), var(--light-yellow), var(--med-yellow));
 }
 
 .entrySubmission.entrySubmissionBackground4{
-    background-image: linear-gradient(135deg, var(--light-yellow), var(--med-yellow));
-}
-
-.entrySubmission.entrySubmissionBackground5{
-    background-image: linear-gradient(135deg, var(--med-yellow), var(--dark-yellow));
+    background-image: linear-gradient(135deg, var(--light-yellow), var(--med-yellow), var(--dark-yellow));
 }

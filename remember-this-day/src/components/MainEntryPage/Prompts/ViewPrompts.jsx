@@ -1,9 +1,8 @@
-import { useState } from 'react';
 import WritingPrompts from './WritingPrompts.json'
 
 //generate random number
 
-export default function ViewPrompts({promptDisplay, setPromptDisplay}){
+export default function ViewPrompts({promptDisplay, setPromptDisplay, promptButtonText, setPromptButtonText}){
 
     function handlePromptChange(){
     const randomNumberGenerate = Math.floor(Math.random() * (WritingPrompts.length))

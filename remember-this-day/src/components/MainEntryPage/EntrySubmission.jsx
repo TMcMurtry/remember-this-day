@@ -13,11 +13,10 @@ export default function EntrySubmission({currentUser, setCurrentUser}){
         "entrySubmissionBackground1",
         "entrySubmissionBackground2",
         "entrySubmissionBackground3",
-        "entrySubmissionBackground4",
-        "entrySubmissionBackground5"
+        "entrySubmissionBackground4"
     ];
 
-    const selectedBackgroundClass = backgroundClasses[backgroundSelector] || backgroundClasses[4];
+    const selectedBackgroundClass = backgroundClasses[backgroundSelector] || backgroundClasses[3];
     
     return(
         <div className={`entrySubmission ${selectedBackgroundClass}`}> 
