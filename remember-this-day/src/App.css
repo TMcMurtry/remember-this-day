@@ -28,3 +28,45 @@ html, body, #root{
     height: auto;
     width: 100vw;
 }
+
+button{
+    background-color: var(--dark-blue);
+    border-radius: 6px;
+    color: white;
+    padding: 10px;
+    border: 1px;
+    transition-duration: 1s;
+}
+
+button:hover{
+    animation-name: colorChange;
+    animation-duration: 5s;
+}
+
+@keyframes colorChange {
+    0%{
+        transition: ease-in-out;
+        background-color: var(--dark-blue);
+    }
+    20%{
+        transition: ease-in-out;        
+        background-color: var(--med-blue);
+    }
+    40%{
+        transition: ease-in-out;
+        background-color: var(--light-blue);
+    }
+    60%{
+        transition: ease-in-out;
+        background-color: var(--light-yellow);
+        color: #062B79;
+    }
+    80%{
+        transition: ease-in-out;
+        background-color: var(--med-yellow);
+    }
+    100%{
+        transition: ease-in-out;
+        background-color: var(--dark-yellow);
+    }
+}
