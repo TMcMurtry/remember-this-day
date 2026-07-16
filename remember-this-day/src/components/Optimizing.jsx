@@ -3,7 +3,7 @@ import './Optimizing.css'
 export default function Optimizing(){
 
     return(
-        <div>
+        <div className='optimizing'>
             <h1>About</h1>
             <p>The point of this application is to keep positivity in the forefront of your mind! 
                 So the first step in this process is to use the journal entry submission form to write about good things that happen to you throughout the day
