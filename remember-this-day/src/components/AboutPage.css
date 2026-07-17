@@ -20,12 +20,14 @@
     padding: 10px;
     margin: 20px;
     border-radius: 10px;
+    max-width: 80%;
 }
 
 .aboutTable{
     border-collapse: collapse ;
     background-color: rgba(255, 255, 255, .7);
     border-top-left-radius: px;
+    max-width: 90%;
 }
 
 td, th{

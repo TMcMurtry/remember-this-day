@@ -9,8 +9,20 @@
 
 }
 
+@media (max-width: 1200px) {
+    .loginPage{
+        background-image: url('images/Sunrise.png');
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(6, 1fr)
+    }
+}
+
 .loginForm{
-    background-image: linear-gradient(135deg, #F1B351, #FAFBBD);
+    background-color: rgba(255, 255, 255, .5);
     grid-column-start: 2 ;
     grid-row: 3/5 ;
     border-radius:15px;

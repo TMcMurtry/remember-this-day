@@ -45,8 +45,7 @@ export default function Login({isLoggedIn, setIsLoggedIn, currentUser, setCurren
                 </label>
                 {loginFail && <p>Incorrect Username or Password</p>}
                 <button name="login" id="login" type="button" onClick={passwordVerify}>Log In</button>
-            <p>{trimmedUsernameInput}</p>
-            <p>{trimmedPasswordInput}</p>
+            
             </form>
         </div>
     )

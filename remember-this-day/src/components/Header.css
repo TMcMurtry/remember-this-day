@@ -1,15 +1,22 @@
 .headerDisplay{
     grid-area: Header;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto ;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#title{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-right: auto;
 }
 
 nav{
     grid-row-start: 2;
     grid-column-start: 2;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     padding: 15px;
     white-space: pre;

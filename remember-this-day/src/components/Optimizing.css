@@ -1,6 +1,76 @@
 .optimizing{
-     min-height: 100%;
-    width: 100%;
+    min-height: 100%;
+    max-width: 100%;
     background-image: linear-gradient(135deg, #5995B7, #FAFBBD, #FDE050);
-    
+    display: grid;
+    grid-template-areas: 
+    "h1 h1 h1"
+    "p1 journalingImage p2 "
+    "readingImage p3 happyPerson ";
+}
+
+@media (max-width: 1200px){
+    .optimizing{
+        min-height: 100%;
+        max-width: 100%;
+        background-image: linear-gradient(135deg, #5995B7, #FAFBBD, #FDE050);
+        display: grid;
+        grid-template-areas: 
+        "h1 h1 "
+        "journalingImage p1 "
+        "p2 readingImage"
+        "happyPerson p3";
+    }
+}
+
+@media (max-width: 600px){
+    .optimizing{
+        min-height: 100%;
+        max-width: 100%;
+        background-image: linear-gradient(135deg, #5995B7, #FAFBBD, #FDE050);
+        display: grid;
+        grid-template-areas: 
+        "h1 "
+        "journalingImage"
+        "p1"
+        "readingImage"
+        "p2"
+        "happyPerson"
+        "p3"
+        ;
+    }
+}
+
+h1{
+ padding: 20px;
+ grid-area: h1;
+ align-self: center;
+}
+
+#journalingImage{
+    grid-area: journalingImage;
+}
+
+#p1{
+    grid-area: p1
+}
+
+#readingImage{
+    grid-area: readingImage;
+}
+
+#p2{
+    grid-area: p2;
+}
+
+#happyPerson{
+    grid-area: happyPerson;
+}
+
+#p3{
+    grid-area: p3;
+}
+
+img{
+    max-width: 40%;
 }
