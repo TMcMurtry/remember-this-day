@@ -45,6 +45,19 @@
     padding: 15px;
 }
 
+#title{
+    font-family: 'courier prime', serif;
+}
+
+#entryText{
+    font-family: 'courier prime', serif;
+}
+
+#dateInput{
+    font-family: 'courier prime', serif;
+
+}
+
 .entrySubmissionForm textarea{
     display: flex;
     align-items: center;

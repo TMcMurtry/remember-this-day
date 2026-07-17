@@ -5,11 +5,20 @@
     
 }
 
-#title{
+.mainTitle{
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    align-items: start;
     margin-right: auto;
+    padding: 10px;
+}
+
+.mainTitle h1{
+    margin-bottom: 0px;
+}
+
+.mainTitle p{
+    padding-left: 20px;
 }
 
 nav{
@@ -20,4 +29,5 @@ nav{
     align-items: center;
     padding: 15px;
     white-space: pre;
+    gap: 20px;
 }

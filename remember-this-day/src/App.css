@@ -27,6 +27,7 @@ html, body, #root{
     min-height: 100vh;
     height: auto;
     width: 100vw;
+    font-family: 'Libre Baskerville', 'serif';
 }
 
 button{
