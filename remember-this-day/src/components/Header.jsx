@@ -3,11 +3,14 @@ import './Header.css'
 
 export default function Header({isLoggedIn, setIsLoggedIn}){
 
+    const logout = () => setIsLoggedIn(false);
+
     return(
         <div className="headerDisplay">
             <div className="mainTitle">
                 <h1 >Remember This Day</h1>
                 <p>Journaling the happy moments</p>
+            {isLoggedIn && <button type="button" id="logoutButton" onClick={logout}>Log Out</button>}
             </div>
             {!isLoggedIn ? 
             <nav className="loggedOutNav">

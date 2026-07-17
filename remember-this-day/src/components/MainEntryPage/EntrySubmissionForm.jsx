@@ -16,7 +16,7 @@ export default function EntrySubmissionForm({currentUser, setCurrentUser, backgr
         setEntryTitle("");
         setEntryTextBody("");
         setEntryDate("");
-        setBackgroundSelector(backgroundSelector + 3)
+        setBackgroundSelector(backgroundSelector + 1)
         setPromptDisplay(false)
         setPromptButtonText("View Writing Prompts")
         setSubmittedJournalEntry(true)
