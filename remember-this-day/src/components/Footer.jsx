@@ -1,7 +1,6 @@
 import './Footer.css'
 
 export default function Footer(){
-///Timothy McMurtry 
 
     return(
         <div className='footerDisplay'>

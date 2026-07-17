@@ -1,6 +1,5 @@
 import WritingPrompts from './WritingPrompts.json'
 
-//generate random number
 
 export default function ViewPrompts({promptDisplay, setPromptDisplay, promptButtonText, setPromptButtonText}){
 
