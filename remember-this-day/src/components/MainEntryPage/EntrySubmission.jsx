@@ -9,7 +9,7 @@ export default function EntrySubmission({currentUser, setCurrentUser}){
     const [promptDisplay, setPromptDisplay] = useState(false);
     const [promptButtonText, setPromptButtonText] = useState("View Writing Prompts")
     const [submittedJournalEntry, setSubmittedJournalEntry] = useState(false);
-    //add logout link
+
     const backgroundClasses = [
         "entrySubmissionBackground1",
         "entrySubmissionBackground2",
