@@ -1,11 +1,8 @@
-import { useState } from 'react';
 import WritingPrompts from './WritingPrompts.json'
 
 //generate random number
 
-export default function ViewPrompts(){
-    const [promptDisplay, setPromptDisplay] = useState(false);
-    const [promptButtonText, setPromptButtonText] = useState("View Writing Prompts")
+export default function ViewPrompts({promptDisplay, setPromptDisplay, promptButtonText, setPromptButtonText}){
 
     function handlePromptChange(){
     const randomNumberGenerate = Math.floor(Math.random() * (WritingPrompts.length))
@@ -15,10 +12,11 @@ export default function ViewPrompts(){
     }
 
     return(
-        <div>
+        <div className='promptDisplayArea'>
             { promptDisplay && <div className='promptDisplay'><h2>Prompt Category: {promptDisplay.category}</h2>
             <ul>
-                {promptDisplay.prompts.map((prompt, index) => <li key={index} >{prompt}</li>)}
+                {promptDisplay.prompts.map((prompt, index) =>
+                     <li key={index} >{prompt}</li>)}
             </ul>
             </div>}
             <label htmlFor="viewPrompts">

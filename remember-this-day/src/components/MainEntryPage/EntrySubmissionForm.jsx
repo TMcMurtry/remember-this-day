@@ -1,6 +1,7 @@
 import { useState } from "react"
 
-export default function EntrySubmissionForm({currentUser, setCurrentUser}){
+export default function EntrySubmissionForm({currentUser, setCurrentUser, backgroundSelector, 
+    setBackgroundSelector, setPromptDisplay, setPromptButtonText, setSubmittedJournalEntry}){
     const [entryTitle, setEntryTitle] = useState("");
     const [entryTextBody, setEntryTextBody] = useState("");
     const [entryDate, setEntryDate] = useState("");
@@ -15,18 +16,23 @@ export default function EntrySubmissionForm({currentUser, setCurrentUser}){
         setEntryTitle("");
         setEntryTextBody("");
         setEntryDate("");
+        setBackgroundSelector(backgroundSelector + 1)
+        setPromptDisplay(false)
+        setPromptButtonText("View Writing Prompts")
+        setSubmittedJournalEntry(true)
     };
 
-
     return(
-        <form className="entrySubmitForm" onSubmit={handleEntryAppend}>
-            <label htmlFor="title">
+        <form className="entrySubmissionForm" onSubmit={handleEntryAppend}>
+            <h2>Submit a new journal entry!</h2>
+            <label htmlFor="title">Title: <br/>
                 <input name="title" id="title" type="text" value={entryTitle} onChange={handleTitleChange} placeholder="Enter Title"/>
             </label>
             <label htmlFor="entryText">
-                <textarea name="entryText" id="entryText" value={entryTextBody} onChange={handleEntryTextChange} placeholder="Type your entry here" cols={30} rows={20} required/>
+                <textarea name="entryText" id="entryText" value={entryTextBody} onChange={handleEntryTextChange} 
+                cols={40} rows={6} placeholder="Type your entry here" required/>
             </label>
-            <label htmlFor="dateInput">
+            <label htmlFor="dateInput">Date: <br/>
                 <input name="dateInput" id="dateInput" type="date" value={entryDate} onChange={handleDateChange} required/>
             </label>
             <button id="entrySubmitButton" type="submit" >Submit Entry</button>
