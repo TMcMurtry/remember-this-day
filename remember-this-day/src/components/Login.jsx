@@ -11,22 +11,35 @@ export default function Login({isLoggedIn, setIsLoggedIn, currentUser, setCurren
     const handlePasswordChange = (ev) => setPasswordInput(ev.target.value);
     const trimmedUsernameInput = usernameInput.trim();
     const trimmedPasswordInput = passwordInput.trim();
-     const findUser = UserData.userProfiles.filter((user) => 
-        (user.username === trimmedUsernameInput ))
+     
     
+     let loginErrorMessage;
+
     function handleLoginSuccess(){
         setCurrentUser(findUser[0])
         setIsLoggedIn(true);
     }
     
-    async function verifyLogin(){
-        let users;
+    async function verifyLogin(ev){
+        ev.preventDefault();
         try {
             const response = await fetch("http:localhost:8080/users");
             const data = await response.json();
+
             if(!response.ok){
-                throw new Error(`HTTP error`)
+                throw new Error(`HTTP error: ${response.status} - could not connect to the database`)
             }
+            const findUser = data.filter((user) => 
+                (user.username === trimmedUsernameInput ))
+            if (findUser.length != 1) {
+                throw new Error(`Username or Password invalid`);
+            } else {
+                const foundUser = findUser[0];
+            }
+            if
+           
+        } catch (error){
+            loginErrorMessage = error;
         }
     }
 
@@ -44,7 +57,7 @@ export default function Login({isLoggedIn, setIsLoggedIn, currentUser, setCurren
 
     return(
         <div className='loginPage'>
-            <form className='loginForm'>
+            <form className='loginForm' onSubmit={verifyLogin}>
                 <h2>Log In</h2>
                 <label htmlFor="username"> <br/>
                     <input id="username" type="text" name="username" 
@@ -54,8 +67,8 @@ export default function Login({isLoggedIn, setIsLoggedIn, currentUser, setCurren
                     <input id="password" name="password" type="password" 
                     value={passwordInput} onChange={handlePasswordChange} placeholder="Password" required/>
                 </label>
-                {loginFail && <p>Incorrect Username or Password, please try again (case sensitive)</p>}
-                <button name="login" id="login" type="button" onClick={passwordVerify}>Log In</button>
+                {loginFail && <p>{loginErrorMessage}</p>}
+                <button name="login" id="login" type="submit" >Log In</button>
             
             </form>
         </div>
