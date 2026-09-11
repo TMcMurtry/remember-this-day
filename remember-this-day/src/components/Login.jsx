@@ -19,6 +19,17 @@ export default function Login({isLoggedIn, setIsLoggedIn, currentUser, setCurren
         setIsLoggedIn(true);
     }
     
+    async function verifyLogin(){
+        let users;
+        try {
+            const response = await fetch("http:localhost:8080/users");
+            const data = await response.json();
+            if(!response.ok){
+                throw new Error(`HTTP error`)
+            }
+        }
+    }
+
     function passwordVerify(){
         let passwordToMatch = null;
         if (findUser.length != 1){
@@ -43,7 +54,7 @@ export default function Login({isLoggedIn, setIsLoggedIn, currentUser, setCurren
                     <input id="password" name="password" type="password" 
                     value={passwordInput} onChange={handlePasswordChange} placeholder="Password" required/>
                 </label>
-                {loginFail && <p>Incorrect Username or Password</p>}
+                {loginFail && <p>Incorrect Username or Password, please try again (case sensitive)</p>}
                 <button name="login" id="login" type="button" onClick={passwordVerify}>Log In</button>
             
             </form>
