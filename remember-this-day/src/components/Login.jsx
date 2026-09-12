@@ -11,21 +11,19 @@ export default function Login({isLoggedIn, setIsLoggedIn, currentUser, setCurren
     const handlePasswordChange = (ev) => setPasswordInput(ev.target.value);
     const trimmedUsernameInput = usernameInput.trim();
     const trimmedPasswordInput = passwordInput.trim();
-     
-    
-     let loginErrorMessage;
+    let loginErrorMessage;
 
-    function handleLoginSuccess(){
-        setCurrentUser(findUser[0])
-        setIsLoggedIn(true);
-    }
+    // function handleLoginSuccess(){
+    //     setCurrentUser(findUser[0])
+    //     setIsLoggedIn(true);
+    // }
     
     async function verifyLogin(ev){
         ev.preventDefault();
         try {
+            let foundUser;
             const response = await fetch("http:localhost:8080/users");
             const data = await response.json();
-
             if(!response.ok){
                 throw new Error(`HTTP error: ${response.status} - could not connect to the database`)
             }
@@ -34,26 +32,30 @@ export default function Login({isLoggedIn, setIsLoggedIn, currentUser, setCurren
             if (findUser.length != 1) {
                 throw new Error(`Username or Password invalid`);
             } else {
-                const foundUser = findUser[0];
+                foundUser = findUser[0];
             }
-            if
+            if (foundUser.password === trimmedPasswordInput){
+                setIsLoggedIn(true);
+                setCurrentUser(foundUser);
+            }
            
         } catch (error){
+            setLoginFail(true);
             loginErrorMessage = error;
         }
     }
 
-    function passwordVerify(){
-        let passwordToMatch = null;
-        if (findUser.length != 1){
-            return(setLoginFail(true))
-        } else {
-            passwordToMatch = findUser[0].password;
-        }
-        passwordToMatch === trimmedPasswordInput ? handleLoginSuccess() : setLoginFail(true) ;
-        setUsernameInput("");
-        setPasswordInput("");
-    }
+    // function passwordVerify(){
+    //     let passwordToMatch = null;
+    //     if (findUser.length != 1){
+    //         return(setLoginFail(true))
+    //     } else {
+    //         passwordToMatch = findUser[0].password;
+    //     }
+    //     passwordToMatch === trimmedPasswordInput ? handleLoginSuccess() : setLoginFail(true) ;
+    //     setUsernameInput("");
+    //     setPasswordInput("");
+    // }
 
     return(
         <div className='loginPage'>

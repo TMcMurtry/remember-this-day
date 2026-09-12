@@ -22,6 +22,28 @@ export default function EntrySubmissionForm({currentUser, setCurrentUser, backgr
         setSubmittedJournalEntry(true)
     };
 
+    async function postEntry(ev){
+        ev.preventDefault();
+        try {
+            let post = fetch("http://localhost:8080", {method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify({
+                    title: entryTitle,
+                    entryText: entryTextBody,
+                    date: entryDate,
+                    dateCreated: new Date().toISOString(),
+                    previouslyDisplayed: false
+                })
+            })
+            if (!post.ok){
+                throw new Error(`Database connection error, entry was unable to be sent`)
+            }
+        }
+
+    }
+
     return(
         <form className="entrySubmissionForm" onSubmit={handleEntryAppend}>
             <h2>Submit a new journal entry!</h2>
