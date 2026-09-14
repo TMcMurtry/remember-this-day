@@ -2,13 +2,17 @@ import { useState } from "react"
 
 export default function EntrySubmissionForm({currentUser, setCurrentUser, backgroundSelector, 
     setBackgroundSelector, setPromptDisplay, setPromptButtonText, setSubmittedJournalEntry}){
-    const [postError, setPostError] = useState(null);
+    
     const [entryTitle, setEntryTitle] = useState("");
     const [entryTextBody, setEntryTextBody] = useState("");
     const [entryDate, setEntryDate] = useState("");
     const handleTitleChange = (ev) => setEntryTitle(ev.target.value);
     const handleEntryTextChange = (ev) => setEntryTextBody(ev.target.value);
     const handleDateChange = (ev) => setEntryDate(ev.target.value);
+    const [submissionFail, setsubmissionFail] = useState(false);
+    const [submissionFailMessage, setsubmissionFailMessage] = useState("");
+    
+
 
     function handleEntryAppend(ev){
         ev.preventDefault();
@@ -42,7 +46,8 @@ export default function EntrySubmissionForm({currentUser, setCurrentUser, backgr
                 throw new Error(`Database connection error, entry was unable to be sent`)
             }
         } catch (error) {
-
+            setsubmissionFail(true);
+            setsubmissionFailMessage(error);
         }
 
     }
@@ -61,7 +66,7 @@ export default function EntrySubmissionForm({currentUser, setCurrentUser, backgr
                 <input name="dateInput" id="dateInput" type="date" value={entryDate} onChange={handleDateChange} required/>
             </label>
             <button id="entrySubmitButton" type="submit" >Submit Entry</button>
-
+            {submissionFail && <p>submissionFailMessage</p>}
         </form>
     )
 }
