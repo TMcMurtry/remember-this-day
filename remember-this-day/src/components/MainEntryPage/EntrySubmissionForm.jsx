@@ -2,6 +2,7 @@ import { useState } from "react"
 
 export default function EntrySubmissionForm({currentUser, setCurrentUser, backgroundSelector, 
     setBackgroundSelector, setPromptDisplay, setPromptButtonText, setSubmittedJournalEntry}){
+    const [postError, setPostError] = useState(null);
     const [entryTitle, setEntryTitle] = useState("");
     const [entryTextBody, setEntryTextBody] = useState("");
     const [entryDate, setEntryDate] = useState("");
@@ -40,6 +41,8 @@ export default function EntrySubmissionForm({currentUser, setCurrentUser, backgr
             if (!post.ok){
                 throw new Error(`Database connection error, entry was unable to be sent`)
             }
+        } catch (error) {
+
         }
 
     }
@@ -58,6 +61,7 @@ export default function EntrySubmissionForm({currentUser, setCurrentUser, backgr
                 <input name="dateInput" id="dateInput" type="date" value={entryDate} onChange={handleDateChange} required/>
             </label>
             <button id="entrySubmitButton" type="submit" >Submit Entry</button>
+
         </form>
     )
 }
