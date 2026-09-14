@@ -14,23 +14,10 @@ export default function EntrySubmissionForm({currentUser, setCurrentUser, backgr
     
 
 
-    function handleEntryAppend(ev){
-        ev.preventDefault();
-        const newEntry = { title: entryTitle, date: entryDate, entry: entryTextBody };
-        setCurrentUser({...currentUser, entries:[...currentUser.entries, newEntry]});
-        setEntryTitle("");
-        setEntryTextBody("");
-        setEntryDate("");
-        setBackgroundSelector(backgroundSelector + 1)
-        setPromptDisplay(false)
-        setPromptButtonText("View Writing Prompts")
-        setSubmittedJournalEntry(true)
-    };
-
     async function postEntry(ev){
         ev.preventDefault();
         try {
-            let post = fetch("http://localhost:8080", {method: "POST",
+            const post = fetch("http://localhost:8080", {method: "POST",
                 headers: {
                     "Content-type": "application/json"
                 },
@@ -44,6 +31,15 @@ export default function EntrySubmissionForm({currentUser, setCurrentUser, backgr
             })
             if (!post.ok){
                 throw new Error(`Database connection error, entry was unable to be sent`)
+            }
+            elseIf (post.ok){
+                setEntryTitle("");
+                setEntryTextBody("");
+                setEntryDate("");
+                setBackgroundSelector(backgroundSelector + 1);
+                setPromptDisplay(false);
+                setPromptButtonText("View Writing Prompts");
+                setSubmittedJournalEntry(true);
             }
         } catch (error) {
             setsubmissionFail(true);
