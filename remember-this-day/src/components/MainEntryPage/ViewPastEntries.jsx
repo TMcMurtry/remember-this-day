@@ -3,6 +3,7 @@ import { useState } from "react"
 export default function ViewPastEntries({currentUser, backgroundSelector, setBackgroundSelector}){
     const [entryDisplay, setEntryDisplay] = useState(false);
     const [entryButtonText, setEntryButtonText] = useState("View Past Entry!")
+    const [randomCategory, setRandomCategory] = useState("");
     
     function handleEntryDisplay (){
         const randomNumberGenerate = Math.floor(Math.random() * (currentUser.entries.length))
@@ -11,6 +12,26 @@ export default function ViewPastEntries({currentUser, backgroundSelector, setBac
         setEntryButtonText("View Another Entry!")
         setBackgroundSelector(backgroundSelector + 1)
     }
+
+    async function entryDisplayFunction(){
+        try {
+        const response = await fetch("http:localhost:8080/categories");
+        const data = await response.json();
+        if (!response.ok){
+            throw new Error(`HTTP error: ${response.status} - could not connect to the database`)
+        }
+        setRandomCategory(Math.floor(Math.random() * (data.length)));
+        const promptsResponse = await fetch("http:localhost:8080/prompts/" + randomCategory);
+        const promptsData = await promptsResponse.json();
+        if (!promptsResponse.ok){
+            throw new Error(`HTTP error: ${response.status} - could not connect to the database`)
+        }
+        
+        } catch (error){
+
+        }
+    }   
+
     return(
         <div className="pastEntryDisplay">
             {entryDisplay && 

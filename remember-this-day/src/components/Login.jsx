@@ -13,10 +13,6 @@ export default function Login({isLoggedIn, setIsLoggedIn, currentUser, setCurren
     const trimmedPasswordInput = passwordInput.trim();
     let loginErrorMessage;
 
-    // function handleLoginSuccess(){
-    //     setCurrentUser(findUser[0])
-    //     setIsLoggedIn(true);
-    // }
     
     async function verifyLogin(ev){
         ev.preventDefault();
@@ -45,17 +41,7 @@ export default function Login({isLoggedIn, setIsLoggedIn, currentUser, setCurren
         }
     }
 
-    // function passwordVerify(){
-    //     let passwordToMatch = null;
-    //     if (findUser.length != 1){
-    //         return(setLoginFail(true))
-    //     } else {
-    //         passwordToMatch = findUser[0].password;
-    //     }
-    //     passwordToMatch === trimmedPasswordInput ? handleLoginSuccess() : setLoginFail(true) ;
-    //     setUsernameInput("");
-    //     setPasswordInput("");
-    // }
+  
 
     return(
         <div className='loginPage'>
