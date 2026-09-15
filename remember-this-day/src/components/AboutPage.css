@@ -43,3 +43,11 @@ td, th{
     padding: 10px;
     border-radius: 10px;
 }
+
+a {
+    color:  #5995B7;
+}
+
+a:visited {
+    color: #062B79;
+}

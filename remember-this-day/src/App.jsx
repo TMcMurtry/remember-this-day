@@ -8,6 +8,8 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
  
+  
+
   return (
     <div className='app'>
       <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>

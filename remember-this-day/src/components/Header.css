@@ -1,3 +1,4 @@
+
 .headerDisplay{
     grid-area: Header;
     
@@ -40,4 +41,12 @@ nav{
     padding: 15px;
     white-space: pre;
     gap: 20px;
+}
+
+link {
+    color:  #062B79;
+}
+
+link:visited{
+    color: #F1B351;
 }

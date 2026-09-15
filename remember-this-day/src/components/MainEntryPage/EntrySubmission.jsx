@@ -4,10 +4,9 @@ import ViewPrompts from './Prompts/ViewPrompts'
 import './EntrySubmission.css'
 import { useState } from 'react'
 
-export default function EntrySubmission({currentUser, setCurrentUser}){
+export default function EntrySubmission({currentUser}){
     const [backgroundSelector, setBackgroundSelector] = useState(0);
     const [promptDisplay, setPromptDisplay] = useState(false);
-    const [promptButtonText, setPromptButtonText] = useState("View Writing Prompts")
     const [submittedJournalEntry, setSubmittedJournalEntry] = useState(false);
 
     const backgroundClasses = [
@@ -34,12 +33,9 @@ export default function EntrySubmission({currentUser, setCurrentUser}){
             </div> :
             <div className={`entrySubmission ${selectedBackgroundClass}`}> 
                 <ViewPastEntries currentUser={currentUser} backgroundSelector={backgroundSelector} setBackgroundSelector={setBackgroundSelector}/>
-                <ViewPrompts currentUser={currentUser} promptDisplay={promptDisplay} setPromptDisplay={setPromptDisplay}
-                promptButtonText={promptButtonText} setPromptButtonText={setPromptButtonText}/>
-                <EntrySubmissionForm currentUser={currentUser} setCurrentUser={setCurrentUser} 
-                backgroundSelector={backgroundSelector} setBackgroundSelector={setBackgroundSelector}
-                setPromptDisplay={setPromptDisplay} setPromptButtonText={setPromptButtonText}
-                setSubmittedJournalEntry={setSubmittedJournalEntry}/>
+                <ViewPrompts currentUser={currentUser} promptDisplay={promptDisplay} setPromptDisplay={setPromptDisplay}/>
+                <EntrySubmissionForm currentUser={currentUser} backgroundSelector={backgroundSelector} setBackgroundSelector={setBackgroundSelector}
+                setPromptDisplay={setPromptDisplay} setSubmittedJournalEntry={setSubmittedJournalEntry}/>
             </div>}
         </div>
     )
