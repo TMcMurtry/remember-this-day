@@ -3,7 +3,7 @@ import { useState } from "react"
 export default function ViewPastEntries({currentUser, backgroundSelector, setBackgroundSelector}){
     const [entryDisplay, setEntryDisplay] = useState(false);
     const [entryButtonText, setEntryButtonText] = useState("View Past Entry!")
-    const [randomCategory, setRandomCategory] = useState("");
+    const [randomEntry, setRandomEntry] = useState("");
     
     function handleEntryDisplay (){
         const randomNumberGenerate = Math.floor(Math.random() * (currentUser.entries.length))

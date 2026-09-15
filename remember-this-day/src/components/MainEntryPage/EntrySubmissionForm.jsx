@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 export default function EntrySubmissionForm({currentUser, setCurrentUser, backgroundSelector, 
-    setBackgroundSelector, setPromptDisplay, setPromptButtonText, setSubmittedJournalEntry}){
+    setBackgroundSelector, setPromptDisplay,  setSubmittedJournalEntry}){
     
     const [entryTitle, setEntryTitle] = useState("");
     const [entryTextBody, setEntryTextBody] = useState("");
@@ -22,6 +22,7 @@ export default function EntrySubmissionForm({currentUser, setCurrentUser, backgr
                     "Content-type": "application/json"
                 },
                 body: JSON.stringify({
+                    id:
                     title: entryTitle,
                     entryText: entryTextBody,
                     date: entryDate,
@@ -38,7 +39,6 @@ export default function EntrySubmissionForm({currentUser, setCurrentUser, backgr
             setEntryDate("");
             setBackgroundSelector(backgroundSelector + 1);
             setPromptDisplay(false);
-            setPromptButtonText("View Writing Prompts");
             setSubmittedJournalEntry(true);
             
         } catch (error) {
