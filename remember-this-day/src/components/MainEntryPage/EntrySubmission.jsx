@@ -4,7 +4,7 @@ import ViewPrompts from './Prompts/ViewPrompts'
 import './EntrySubmission.css'
 import { useState } from 'react'
 
-export default function EntrySubmission({currentUser, setCurrentUser}){
+export default function EntrySubmission({currentUser}){
     const [backgroundSelector, setBackgroundSelector] = useState(0);
     const [promptDisplay, setPromptDisplay] = useState(false);
     const [submittedJournalEntry, setSubmittedJournalEntry] = useState(false);

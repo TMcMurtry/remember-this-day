@@ -19,7 +19,7 @@ export default function Optimizing(){
             <div id='p3'>
                 <h3>Important Note!</h3>
                 <p >It is important to remember that you're human and we all have ups and downs. If you're having a really bad day and nothing can seem to cheer you up, that's alright.
-                    The point isn't to be perfectly cheerful all the time. The point is that happiness is a choice, and I want to give you a tool to make that choice a little bit easier!
+                    The point isn't to be perfectly cheerful all the time. The point is that happiness is a choice, and this app is designed to be a tool to make that choice a little bit easier!
                 </p>
             </div>
             <img src='./images/Happy-person.jpg' alt="Image of a happy child" id='happyPerson'></img>

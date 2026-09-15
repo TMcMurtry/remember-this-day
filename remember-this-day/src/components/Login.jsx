@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './Login.css'
 
-export default function Login({isLoggedIn, setIsLoggedIn, currentUser, setCurrentUser}){
+export default function Login({setIsLoggedIn, setCurrentUser}){
  
     const [usernameInput, setUsernameInput] = useState("");
     const [passwordInput, setPasswordInput] = useState("");
