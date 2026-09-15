@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import UserData from '../UserData.json'
 import './Login.css'
 
 export default function Login({isLoggedIn, setIsLoggedIn, currentUser, setCurrentUser}){
@@ -7,11 +6,11 @@ export default function Login({isLoggedIn, setIsLoggedIn, currentUser, setCurren
     const [usernameInput, setUsernameInput] = useState("");
     const [passwordInput, setPasswordInput] = useState("");
     const [loginFail, setLoginFail] = useState(false);
+    const [loginErrorMessage, setLoginErrorMessage] = useState("");
     const handleUsernameChange = (ev) => setUsernameInput(ev.target.value);
     const handlePasswordChange = (ev) => setPasswordInput(ev.target.value);
     const trimmedUsernameInput = usernameInput.trim();
     const trimmedPasswordInput = passwordInput.trim();
-    let loginErrorMessage;
 
     
     async function verifyLogin(ev){
@@ -37,7 +36,7 @@ export default function Login({isLoggedIn, setIsLoggedIn, currentUser, setCurren
            
         } catch (error){
             setLoginFail(true);
-            loginErrorMessage = error;
+            setLoginErrorMessage(error);
         }
     }
 
@@ -57,7 +56,6 @@ export default function Login({isLoggedIn, setIsLoggedIn, currentUser, setCurren
                 </label>
                 {loginFail && <p>{loginErrorMessage}</p>}
                 <button name="login" id="login" type="submit" >Log In</button>
-            
             </form>
         </div>
     )

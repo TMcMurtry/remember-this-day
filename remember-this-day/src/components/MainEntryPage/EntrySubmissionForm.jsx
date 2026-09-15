@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function EntrySubmissionForm({currentUser, setCurrentUser, backgroundSelector, 
+export default function EntrySubmissionForm({currentUser, backgroundSelector, 
     setBackgroundSelector, setPromptDisplay,  setSubmittedJournalEntry}){
     
     const [entryTitle, setEntryTitle] = useState("");
@@ -22,7 +22,7 @@ export default function EntrySubmissionForm({currentUser, setCurrentUser, backgr
                     "Content-type": "application/json"
                 },
                 body: JSON.stringify({
-                    id:
+                    id: currentUser.id,
                     title: entryTitle,
                     entryText: entryTextBody,
                     date: entryDate,

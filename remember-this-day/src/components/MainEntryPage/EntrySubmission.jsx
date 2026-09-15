@@ -34,8 +34,7 @@ export default function EntrySubmission({currentUser, setCurrentUser}){
             <div className={`entrySubmission ${selectedBackgroundClass}`}> 
                 <ViewPastEntries currentUser={currentUser} backgroundSelector={backgroundSelector} setBackgroundSelector={setBackgroundSelector}/>
                 <ViewPrompts currentUser={currentUser} promptDisplay={promptDisplay} setPromptDisplay={setPromptDisplay}/>
-                <EntrySubmissionForm currentUser={currentUser} setCurrentUser={setCurrentUser} 
-                backgroundSelector={backgroundSelector} setBackgroundSelector={setBackgroundSelector}
+                <EntrySubmissionForm currentUser={currentUser} backgroundSelector={backgroundSelector} setBackgroundSelector={setBackgroundSelector}
                 setPromptDisplay={setPromptDisplay} setSubmittedJournalEntry={setSubmittedJournalEntry}/>
             </div>}
         </div>
